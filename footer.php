@@ -1,6 +1,6 @@
 <div class="footer">
     <div class="container">
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col-md-6">
             <?php
                 if(is_active_sidebar("footer-left")){

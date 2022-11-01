@@ -68,3 +68,16 @@ h2.post-title {
 .post-navigation {
     margin-bottom: 50px;
 }
+
+.wp-container-1 {
+flex-direction: row-reverse; }
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+.footer-left p{
+    margin: 0;
+    padding: 0;
+}

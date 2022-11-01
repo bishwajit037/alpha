@@ -12,7 +12,7 @@
                     <div class="post" <?php post_class(); ?>>
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-10 offset-md-1">
+                                <div class="col-md-12">
                                     <h2 class="post-title text-center"><?php the_title();?></h2>
                                     <p class="text-center">
                                     <strong><?php the_author() ?></strong><br/>
@@ -21,7 +21,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-10 offset-md-1">
+                                <div class="col-md-12">
                                     <p>
                                         <?php 
                                             if (has_post_thumbnail()){

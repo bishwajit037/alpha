@@ -30,7 +30,7 @@ function alpha_sidebar() {
 			'name'          => esc_html__( 'Footer Right Sidebar', 'alpha' ),
 			'id'            => 'footer-right',
 			'description'   => esc_html__( 'Right Sidebar', 'alpha' ),
-			'before_widget' => '<div id="%1$s" class="footer-right %2$s">',
+			'before_widget' => '<div id="%1$s" class="footer-right text-right %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
@@ -42,7 +42,7 @@ function alpha_sidebar() {
 			'name'          => esc_html__( 'Footer Left Sidebar', 'alpha' ),
 			'id'            => 'footer-left',
 			'description'   => esc_html__( 'Left Sidebar', 'alpha' ),
-			'before_widget' => '<div id="%1$s" class="footer-left %2$s">',
+			'before_widget' => '<div id="%1$s" class="footer-left m-0 p-0 %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
@@ -50,3 +50,19 @@ function alpha_sidebar() {
 	);
 }
 add_action( 'widgets_init', 'alpha_sidebar' );
+
+//Its a filter Hook for password protected post
+function alpha_the_excerpt($excerpt){
+	if(!post_password_required()){
+		return $excerpt;
+	} else {
+		echo get_the_password_form();
+	}
+}
+add_filter("the_excerpt", "alpha_the_excerpt");
+
+//Protected Post Title Changing
+function alpha_protected_title(){
+ return "Locked : %s";
+}
+add_filter("protected_title_format", "alpha_protected_title");
